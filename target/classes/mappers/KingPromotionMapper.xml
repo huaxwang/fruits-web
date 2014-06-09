@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.king.fruits.dao.KingPromotionMapper" >
+  <resultMap id="BaseResultMap" type="com.king.fruits.model.KingPromotion" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="PICTURE" property="picture" jdbcType="VARCHAR" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="CREATE_ID" property="createId" jdbcType="INTEGER" />
+    <result column="SHOW_STATUES" property="showStatues" jdbcType="INTEGER" />
+    <result column="SHOW_USER_ID" property="showUserId" jdbcType="INTEGER" />
+    <result column="SHOW_TIME" property="showTime" jdbcType="TIMESTAMP" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    ID, NAME, PICTURE, CREATE_TIME, CREATE_ID, SHOW_STATUES, SHOW_USER_ID, SHOW_TIME
+  </sql>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from king_promotion
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from king_promotion
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  
+  <insert id="insert" parameterType="com.king.fruits.model.KingPromotion" >
+    insert into king_promotion (ID, NAME, PICTURE, 
+      CREATE_TIME, CREATE_ID, SHOW_STATUES, 
+      SHOW_USER_ID, SHOW_TIME)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{picture,jdbcType=VARCHAR}, 
+      #{createTime,jdbcType=TIMESTAMP}, #{createId,jdbcType=INTEGER}, #{showStatues,jdbcType=INTEGER}, 
+      #{showUserId,jdbcType=INTEGER}, #{showTime,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="com.king.fruits.model.KingPromotion" >
+    insert into king_promotion
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="picture != null" >
+        PICTURE,
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME,
+      </if>
+      <if test="createId != null" >
+        CREATE_ID,
+      </if>
+      <if test="showStatues != null" >
+        SHOW_STATUES,
+      </if>
+      <if test="showUserId != null" >
+        SHOW_USER_ID,
+      </if>
+      <if test="showTime != null" >
+        SHOW_TIME,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="picture != null" >
+        #{picture,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createId != null" >
+        #{createId,jdbcType=INTEGER},
+      </if>
+      <if test="showStatues != null" >
+        #{showStatues,jdbcType=INTEGER},
+      </if>
+      <if test="showUserId != null" >
+        #{showUserId,jdbcType=INTEGER},
+      </if>
+      <if test="showTime != null" >
+        #{showTime,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  
+  <update id="updateByPrimaryKeySelective" parameterType="com.king.fruits.model.KingPromotion" >
+    update king_promotion
+    <set >
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="picture != null" >
+        PICTURE = #{picture,jdbcType=VARCHAR},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="createId != null" >
+        CREATE_ID = #{createId,jdbcType=INTEGER},
+      </if>
+      <if test="showStatues != null" >
+        SHOW_STATUES = #{showStatues,jdbcType=INTEGER},
+      </if>
+      <if test="showUserId != null" >
+        SHOW_USER_ID = #{showUserId,jdbcType=INTEGER},
+      </if>
+      <if test="showTime != null" >
+        SHOW_TIME = #{showTime,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.king.fruits.model.KingPromotion" >
+    update king_promotion
+    set NAME = #{name,jdbcType=VARCHAR},
+      PICTURE = #{picture,jdbcType=VARCHAR},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      CREATE_ID = #{createId,jdbcType=INTEGER},
+      SHOW_STATUES = #{showStatues,jdbcType=INTEGER},
+      SHOW_USER_ID = #{showUserId,jdbcType=INTEGER},
+      SHOW_TIME = #{showTime,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  
+  
+<!-- ==========================促销业务================================= -->  
+<!-- 查询促销活动  -->
+<select id="selectShow" resultMap="BaseResultMap">
+	select 
+		<include refid="Base_Column_List"/>
+	from king_promotion where SHOW_STATUES=1
+</select>
+
+</mapper>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+        http://code.alibabatech.com/schema/dubbo 
+        http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+	<!-- 提供方应用信息，用于计算依赖关系 -->
+    <dubbo:application name="${dubbo.application.name}" />
+
+    <dubbo:registry protocol="zookeeper" address="${dubbo.registry.address}" />
+
+    <dubbo:reference id="kkmyUserService" group="${dubbo.reference.group}" 
+        interface="com.rogrand.kkmy.user.api.KkmyUserService" />
+    <dubbo:reference id="kkmyMerchantService" group="${dubbo.reference.group}" 
+        interface="com.rogrand.kkmy.merchant.api.KkmyMerchantService" />
+    <dubbo:reference id="kkmyFeedbackService" group="${dubbo.reference.group}" 
+        interface="com.rogrand.kkmy.common.api.KkmyFeedbackService" />
+    <dubbo:reference id="kkmyUserLoginService" group="${dubbo.reference.group}" 
+        interface="com.rogrand.kkmy.common.api.KkmyUserLoginService" />
+    <dubbo:reference id="kkmyUserServiceService" group="${dubbo.reference.group}"
+        interface="com.rogrand.kkmy.common.api.KkmyUserServiceService" />
+    <dubbo:reference id="kkmySmsService" group="${dubbo.reference.group}" 
+        interface="com.rogrand.kkmy.common.api.KkmySmsService" />
+    <dubbo:reference id="kkmyTokenService" group="${dubbo.reference.group}" 
+        interface="com.rogrand.kkmy.common.api.KkmyTokenService" />
+    <dubbo:reference id="kkmyWjdcXcslService" group="${dubbo.reference.group}" 
+        interface="com.rogrand.kkmy.common.api.KkmyWjdcXcslService" />
+    <dubbo:reference id="areaService" group="${dubbo.reference.group}" 
+        interface="com.rogrand.kkmy.dict.api.AreaService" />
+    <dubbo:reference id="kkmyActivityService" group="${dubbo.reference.group}" 
+        interface="com.rogrand.kkmy.activity.api.KkmyActivityService" />
+    <dubbo:reference id="kkmyStartPageService" group="${dubbo.reference.group}" 
+        interface="com.rogrand.kkmy.activity.api.KkmyStartPageService" />
+    <dubbo:reference id="kkmyActivityEnterService" group="${dubbo.reference.group}"
+        interface="com.rogrand.kkmy.activity.api.KkmyActivityEnterService" />
+    <dubbo:reference id="kkmyActivityDetailService" group="${dubbo.reference.group}"
+        interface="com.rogrand.kkmy.activity.api.KkmyActivityDetailService" />
+    <dubbo:reference id="kkmyAppVersionService" group="${dubbo.reference.group}"
+        interface="com.rogrand.kkmy.common.api.KkmyAppVersionService" />
+    <dubbo:reference id="kkmyServiceOrderService" group="${dubbo.reference.group}"
+        interface="com.rogrand.kkmy.common.api.KkmyServiceOrderService" />
+    <dubbo:reference id="kkmyServiceDialogService" group="${dubbo.reference.group}"
+        interface="com.rogrand.kkmy.common.api.KkmyServiceDialogService" />
+    <dubbo:reference id="kkmyServiceMessageService" group="${dubbo.reference.group}"
+        interface="com.rogrand.kkmy.common.api.KkmyServiceMessageService" />
+    <dubbo:reference id="kkmyServiceEvaluateService" group="${dubbo.reference.group}"
+        interface="com.rogrand.kkmy.common.api.KkmyServiceEvaluateService" />
+    <dubbo:reference id="kkmyUrlHelperService" group="${dubbo.reference.group}"
+        interface="com.rogrand.kkmy.common.api.KkmyUrlHelperService" />
+   	<dubbo:reference id="kkmyUserFavoritesService" group="${dubbo.reference.group}"
+        interface="com.rogrand.kkmy.common.api.KkmyUserFavoritesService" />
+    <dubbo:reference id="kkmyServicePushService" group="${dubbo.reference.group}"
+        interface="com.rogrand.kkmy.common.api.KkmyServicePushService" />
+    <dubbo:reference id="kkmyUserSettingService" group="${dubbo.reference.group}"
+        interface="com.rogrand.kkmy.common.api.KkmyUserSettingService" />
+	<dubbo:reference id="kkmyMerchantSettingService" group="${dubbo.reference.group}"
+        interface="com.rogrand.kkmy.common.api.KkmyMerchantSettingService" />
+	<dubbo:reference id="kkmyServiceAcceptService" group="${dubbo.reference.group}"
+        interface="com.rogrand.kkmy.common.api.KkmyServiceAcceptService" />
+    <dubbo:reference id="mphNormDrugService" group="${dubbo.reference.group}"
+        interface="com.rogrand.kkmy.dict.api.MphNormDrugService" />
+	<dubbo:reference id="kkmyDrugsNameService" group="${dubbo.reference.group}"
+        interface="com.rogrand.kkmy.common.api.KkmyDrugsNameService" />
+	<dubbo:reference id="kkmyCouponReceiveService" group="${dubbo.reference.group}"
+        interface="com.rogrand.kkmy.common.api.KkmyCouponReceiveService" />
+	<dubbo:reference id="kkmyCouponService" group="${dubbo.reference.group}"
+        interface="com.rogrand.kkmy.common.api.KkmyCouponService" />
+	
+</beans>

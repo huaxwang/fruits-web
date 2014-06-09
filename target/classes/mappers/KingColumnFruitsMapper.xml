@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.king.fruits.dao.KingColumnFruitsMapper" >
+  <resultMap id="BaseResultMap" type="com.king.fruits.model.KingColumnFruits" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="FRUITS_ID" property="fruitsId" jdbcType="INTEGER" />
+    <result column="COLUMN_ID" property="columnId" jdbcType="INTEGER" />
+    <result column="STATUS" property="status" jdbcType="INTEGER" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    ID, FRUITS_ID, COLUMN_ID, STATUS
+  </sql>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from king_column_fruits
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from king_column_fruits
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  
+  <insert id="insert" parameterType="com.king.fruits.model.KingColumnFruits" >
+    insert into king_column_fruits (ID, FRUITS_ID, COLUMN_ID, 
+      STATUS)
+    values (#{id,jdbcType=INTEGER}, #{fruitsId,jdbcType=INTEGER}, #{columnId,jdbcType=INTEGER}, 
+      #{status,jdbcType=INTEGER})
+  </insert>
+  
+  <update id="updateByPrimaryKeySelective" parameterType="com.king.fruits.model.KingColumnFruits" >
+    update king_column_fruits
+    <set >
+      <if test="fruitsId != null" >
+        FRUITS_ID = #{fruitsId,jdbcType=INTEGER},
+      </if>
+      <if test="columnId != null" >
+        COLUMN_ID = #{columnId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=INTEGER},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <update id="updateByPrimaryKey" parameterType="com.king.fruits.model.KingColumnFruits" >
+    update king_column_fruits
+    set FRUITS_ID = #{fruitsId,jdbcType=INTEGER},
+      COLUMN_ID = #{columnId,jdbcType=INTEGER},
+      STATUS = #{status,jdbcType=INTEGER}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  
+<!-- ========================栏目水果关系业务==================================== -->  
+</mapper>

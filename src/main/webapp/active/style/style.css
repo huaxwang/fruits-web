@@ -1,0 +1,93 @@
+/*css reset*/
+*{
+    -webkit-text-size-adjust: none;             /* prevent webkit from resizing text to fit */
+    -webkit-tap-highlight-color: rgba(0,0,0,0); /* make transparent link selection, adjust last value opacity 0 to 1.0 */
+	margin: 0;
+	padding: 0;
+}
+*:not(input):not(textarea) {
+	-webkit-user-select: none; /* disable selection/Copy of UIWebView */
+	-webkit-touch-callout: none; /* disable the IOS popup when long-press on a link */
+}
+
+html { color: #666; background: #d1d1d1; position:absolute; width:100%; height:100%; overflow:hidden;}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td { margin: 0; padding: 0 ;}
+body { position: relative; width:100%; height:100%; overflow:hidden; }
+#wrapper {position: absolute; overflow: hidden; width: 100%; top: 0; bottom:4em;}
+#wrapper.fullScreen { bottom:0;}
+table { border-collapse: collapse; border-spacing: 0 }
+fieldset, img { border: 0 }
+address, caption, cite, code, dfn, em, th, var { font-style: normal; font-weight: normal }
+ol, ul { list-style: none }
+caption, th { text-align: left }
+h1, h2, h3, h4, h5, h6 { font-size: 100%; font-weight: normal }
+q:before, q:after { content: '' }
+abbr, acronym { border: 0; font-variant: normal;}
+sup { vertical-align: text-top }
+sub { vertical-align: text-bottom }
+input, textarea, select { font-family: inherit; font-size: inherit; font-weight: inherit }
+input, textarea, select { *font-size:100%;}
+legend { color: #000 }
+body { font: normal 100%; font-family: "Microsoft Yahei"; height: 100%; width: 100% }
+a:link, a:visited, a:active { color: #666; text-decoration: none; }
+a:hover { text-decoration: none; color: #3d69a4; }
+.cf { display: inline-block; }
+* html .cf { height: 1%; }
+.cf { display: block; }
+.cf:after { clear: both; content: "."; display: block; height: 0; visibility: hidden; }
+img { vertical-align: bottom; }
+.fl { float: left; display: inline; }
+.fr { float: right; display: inline; }
+.mt10 { margin-top: 10px; }
+.mb10 { margin-bottom: 10px; }
+/*active_intro*/
+#active_intro { padding: 3.125%; font-size: 0.8em; }
+#active_intro p { line-height: 1.6em; }
+#active_intro span { color:#4DC2A7; font-size: 1.5em;}
+/*applybtn*/
+#applybtn { margin: 0px 3.125% 12px;padding: 0;background-color: #4dc2a7;border-radius: 5px;width: 93.75%;border-width: 0;}
+#applybtn a { display: block; height: 39px; line-height: 39px; text-align: center; font-size: 1.5em; color: #fff; text-shadow: 1px 2px 1px #999; }
+#applybtn a span { font-size: 0.8em; display:none;}
+#applybtn .disabled { display: none;}
+#applybtn.btnDisabled { background-color: #b1aeae;}
+#applybtn.btnDisabled .disabled { display: block;}
+#applybtn.btnDisabled .enabled { display: none;}
+/*active_rule*/
+.textArea { padding: 3.125% 10px; border-top: solid 1px #0bbf96; background-color: #fff; line-height: 1.2em; padding-bottom: 1.2em; }
+.textArea h3 { font-size: 0.9em; padding-bottom: 3px; }
+.textArea li { font-size: 0.75em; line-height: 1.8em; }
+.textArea li .floatRigth { float:right; margin-right:3.125%;}
+.textArea li .number { float: left; width: 1.25em; height: 1.25em; line-height: 1.25em; color: #fff; text-align: center; background-color: #0cbf96; margin-right: 0.8em; margin-top: 0.33em; }
+.textArea li.color3 { color: #ec403e; }
+.bottomMargin { margin-bottom: 3.5em;}
+/*applyForm*/
+#applyForm { /*margin-top:20%;*/ top:0; position: absolute; width: 100%; bottom: 0px; left: 0px; display:none; z-index:50001 }
+#applyForm .applybg { position: absolute; background-color: #000; opacity: 0.5; width: 100%; top:0; bottom:0; z-index:50001;}
+#applyForm form { position: absolute; bottom: 0px; left: 5%; margin-bottom: 2%; width: 90%; z-index:50002;}
+#applyForm form input { outline: none; }
+#applyForm form .input { margin-bottom: 10px; background-color: #fff; border-radius: 10px; opacity: 0.9; padding: 2.5% 0; }
+#applyForm form .input p { padding: 3% 0; font-size: 1.3em; }
+#applyForm form .input p label { float: left; text-align: right; width: 30%; height: 1.8em;line-height: 1.8em;font-size: 0.86em; }
+#applyForm form .input p input { width: 60%; font-size: 0.75em; height: 2em; border: solid 1px #7a7a7a; border-radius: 5px; padding-left: 10px; }
+#applyForm form .input p input:focus { border-color: #0bbf96; }
+#applyForm form .btn{background-color: #fff; border-radius: 10px;}
+#applyForm form .btn input { width: 100%; height: 2.5em; border-radius: 10px; border: none; font-size: 1.15em; color: #666;background: none; }
+/*follow*/
+#follow { position: absolute; bottom: 0px; left: 0px; line-height: 4em; width: 100%; text-align: center; color: #fff; z-index:50000;}
+#follow a.closebtn { position: absolute; top: 0px; right: 0px; width: 1.5em; height: 1.5em; background: url(../images/closebtn.png) no-repeat 0px 0px; background-size: 100% 100%; }
+#follow p { font-size: 1.2em; background-color: #000; opacity: 0.77; }
+
+/*means*/
+#means { padding:5%;}
+#means img { width:100%; }
+#means dl { padding:5% 0; font-size:0.875em; display:table; width:100%; }
+#means dl dt { width:20%; display:table-cell; vertical-align:middle; }
+#means dl dd { width:75%; display:table-cell; vertical-align:middle; padding-left:5%; }
+
+#copyAccount { width:100%; background-color:#fff; padding:3% 0; position:fixed; bottom:0px; left:0px; }
+#copyAccount a { display:block; line-height: 3em; margin:0 5%; background-color:#30c19f; border-radius:5px; text-align:center; color:#fff; text-shadow:1px 1px 1px #666; font-size:1em; }
+
+/*html { overflow:auto;}
+body { position:relative; height:auto; overflow:auto;}
+#wrapper { position:relative;}
+#applyForm { position:relative;}*/
