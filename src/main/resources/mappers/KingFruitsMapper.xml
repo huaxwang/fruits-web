@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.king.fruits.dao.KingFruitsMapper" >
+  <resultMap id="BaseResultMap" type="com.king.fruits.model.KingFruits" >
+  	<id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="PRICE" property="price" jdbcType="DOUBLE" />
+    <result column="ORIGINAL_PRICE" property="originalPrice" jdbcType="CHAR" />
+    <result column="COUNT" property="count" jdbcType="INTEGER" />
+    <result column="UNIT" property="unit" jdbcType="VARCHAR" />
+    <result column="CATEGORY" property="category" jdbcType="INTEGER" />
+    <result column="PICTURE" property="picture" jdbcType="VARCHAR" />
+    <result column="PICTURE_DETAIL" property="pictureDetail" jdbcType="VARCHAR" />
+    <result column="REMARKS" property="remarks" jdbcType="VARCHAR" />
+    <result column="CREATE_ID" property="createId" jdbcType="INTEGER" />
+    <result column="CREATE_TIME" property="createTime" jdbcType="TIMESTAMP" />
+    <result column="DEL_ID" property="delId" jdbcType="INTEGER" />
+    <result column="DEL_TIME" property="delTime" jdbcType="TIMESTAMP" />
+    <result column="ONLINE_OPER_ID" property="onlineOperId" jdbcType="INTEGER" />
+    <result column="ONLINE_OPER_TIME" property="onlineOperTime" jdbcType="TIMESTAMP" />
+    <result column="ONLINE_OPER_STATUE" property="onlineOperStatue" jdbcType="INTEGER" />
+    <result column="OFFLINE_REASON" property="offlineReason" jdbcType="VARCHAR" />
+    <result column="EVALUATION" property="evaluation" jdbcType="INTEGER" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    ID, NAME, PRICE, ORIGINAL_PRICE, COUNT, UNIT, CATEGORY, PICTURE, PICTURE_DETAIL, 
+    REMARKS, CREATE_ID, CREATE_TIME, DEL_ID, DEL_TIME, ONLINE_OPER_ID, ONLINE_OPER_TIME, 
+    ONLINE_OPER_STATUE, OFFLINE_REASON, EVALUATION
+  </sql>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from king_fruits
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from king_fruits
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  
+  <insert id="insert" parameterType="com.king.fruits.model.KingFruits" >
+    insert into king_fruits (ID, NAME, PRICE, 
+      ORIGINAL_PRICE, COUNT, UNIT, 
+      CATEGORY, PICTURE, PICTURE_DETAIL, 
+      REMARKS, CREATE_ID, CREATE_TIME, 
+      DEL_ID, DEL_TIME, ONLINE_OPER_ID, 
+      ONLINE_OPER_TIME, ONLINE_OPER_STATUE, OFFLINE_REASON, 
+      EVALUATION)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{price,jdbcType=DOUBLE}, 
+      #{originalPrice,jdbcType=CHAR}, #{count,jdbcType=INTEGER}, #{unit,jdbcType=VARCHAR}, 
+      #{category,jdbcType=INTEGER}, #{picture,jdbcType=VARCHAR}, #{pictureDetail,jdbcType=VARCHAR}, 
+      #{remarks,jdbcType=VARCHAR}, #{createId,jdbcType=INTEGER}, #{createTime,jdbcType=TIMESTAMP}, 
+      #{delId,jdbcType=INTEGER}, #{delTime,jdbcType=TIMESTAMP}, #{onlineOperId,jdbcType=INTEGER}, 
+      #{onlineOperTime,jdbcType=TIMESTAMP}, #{onlineOperStatue,jdbcType=INTEGER}, #{offlineReason,jdbcType=VARCHAR}, 
+      #{evaluation,jdbcType=INTEGER})
+  </insert>
+  
+  <update id="updateByPrimaryKeySelective" parameterType="com.king.fruits.model.KingFruits" >
+    update king_fruits
+    <set >
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="price != null" >
+        PRICE = #{price,jdbcType=DOUBLE},
+      </if>
+      <if test="originalPrice != null" >
+        ORIGINAL_PRICE = #{originalPrice,jdbcType=CHAR},
+      </if>
+      <if test="count != null" >
+        COUNT = #{count,jdbcType=INTEGER},
+      </if>
+      <if test="unit != null" >
+        UNIT = #{unit,jdbcType=VARCHAR},
+      </if>
+      <if test="category != null" >
+        CATEGORY = #{category,jdbcType=INTEGER},
+      </if>
+      <if test="picture != null" >
+        PICTURE = #{picture,jdbcType=VARCHAR},
+      </if>
+      <if test="pictureDetail != null" >
+        PICTURE_DETAIL = #{pictureDetail,jdbcType=VARCHAR},
+      </if>
+      <if test="remarks != null" >
+        REMARKS = #{remarks,jdbcType=VARCHAR},
+      </if>
+      <if test="createId != null" >
+        CREATE_ID = #{createId,jdbcType=INTEGER},
+      </if>
+      <if test="createTime != null" >
+        CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="delId != null" >
+        DEL_ID = #{delId,jdbcType=INTEGER},
+      </if>
+      <if test="delTime != null" >
+        DEL_TIME = #{delTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="onlineOperId != null" >
+        ONLINE_OPER_ID = #{onlineOperId,jdbcType=INTEGER},
+      </if>
+      <if test="onlineOperTime != null" >
+        ONLINE_OPER_TIME = #{onlineOperTime,jdbcType=TIMESTAMP},
+      </if>
+      <if test="onlineOperStatue != null" >
+        ONLINE_OPER_STATUE = #{onlineOperStatue,jdbcType=INTEGER},
+      </if>
+      <if test="offlineReason != null" >
+        OFFLINE_REASON = #{offlineReason,jdbcType=VARCHAR},
+      </if>
+      <if test="evaluation != null" >
+        EVALUATION = #{evaluation,jdbcType=INTEGER},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <update id="updateByPrimaryKey" parameterType="com.king.fruits.model.KingFruits" >
+    update king_fruits
+    set NAME = #{name,jdbcType=VARCHAR},
+      PRICE = #{price,jdbcType=DOUBLE},
+      ORIGINAL_PRICE = #{originalPrice,jdbcType=CHAR},
+      COUNT = #{count,jdbcType=INTEGER},
+      UNIT = #{unit,jdbcType=VARCHAR},
+      CATEGORY = #{category,jdbcType=INTEGER},
+      PICTURE = #{picture,jdbcType=VARCHAR},
+      PICTURE_DETAIL = #{pictureDetail,jdbcType=VARCHAR},
+      REMARKS = #{remarks,jdbcType=VARCHAR},
+      CREATE_ID = #{createId,jdbcType=INTEGER},
+      CREATE_TIME = #{createTime,jdbcType=TIMESTAMP},
+      DEL_ID = #{delId,jdbcType=INTEGER},
+      DEL_TIME = #{delTime,jdbcType=TIMESTAMP},
+      ONLINE_OPER_ID = #{onlineOperId,jdbcType=INTEGER},
+      ONLINE_OPER_TIME = #{onlineOperTime,jdbcType=TIMESTAMP},
+      ONLINE_OPER_STATUE = #{onlineOperStatue,jdbcType=INTEGER},
+      OFFLINE_REASON = #{offlineReason,jdbcType=VARCHAR},
+      EVALUATION = #{evaluation,jdbcType=INTEGER}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  
+ <!-- ===========================业务新增sql=================================================== --> 
+
+  <!-- 查询所有栏目水果 -->
+  <select id="queryColumnFruitsAll" resultType="com.king.fruits.entity.KingFruitsBean">
+  SELECT 
+	A.ID columnId,
+	A.NAME columName,
+	C.ID fruitsId,
+	C.NAME fruitsName,
+	C.PRICE price,
+	C.ORIGINAL_PRICE original_price,
+	C.COUNT count,
+	C.UNIT unit,
+	C.PICTURE picture,
+	C.REMARKS remarks
+  FROM king_column A
+  LEFT JOIN king_column_fruits B ON A.id=B.COLUMN_ID
+  LEFT JOIN king_fruits C ON B.FRUITS_ID=C.ID
+  WHERE C.ONLINE_OPER_STATUE=0
+  </select>
+  <!-- ============================================================================================================ -->
+  <!-- 查询全部水果总数 -->
+  <select id="queryFruitsAllTotal" resultType="java.lang.Integer">
+  SELECT 
+	count(0) count
+  FROM king_fruits A
+	   LEFT JOIN king_column_fruits B ON A.ID=B.FRUITS_ID
+	   LEFT JOIN king_column C ON B.COLUMN_ID=C.ID
+  <include refid="queryFruitsAll_WhereClause"/>
+  </select>
+  <!-- 查询全部水果 -->
+  <select id="queryFruitsAll" resultType="com.king.fruits.entity.KingFruitsBean">
+  SELECT 
+	A.ID id,
+  	A.CREATE_TIME createTime,
+	A.ONLINE_OPER_STATUE onlineOperStatue,
+	A.NAME name,
+	C.NAME columnName
+  FROM king_fruits A
+	   LEFT JOIN king_column_fruits B ON A.ID=B.FRUITS_ID
+	   LEFT JOIN king_column C ON B.COLUMN_ID=C.ID
+  <include refid="queryFruitsAll_WhereClause"/>
+    ORDER BY 
+        A.CREATE_TIME DESC
+    LIMIT ${limitFrom}, ${pageSize}
+  </select>
+
+<sql id="queryFruitsAll_WhereClause">
+    <where>
+   		AND 1=1
+        <if test="columnId != null">
+            AND B.COLUMN_ID=#{columnId,jdbcType=INTEGER}
+        </if>
+        <if test="onlineOperStatue != null">
+            AND A.ONLINE_OPER_STATUE=#{onlineOperStatue,jdbcType=INTEGER}
+        </if>
+        <if test="name != null">
+           AND A.NAME LIKE '%${name}%'
+        </if>
+    </where>
+  </sql>
+<!-- ============================================================================================================ -->
+ 
+
+</mapper>

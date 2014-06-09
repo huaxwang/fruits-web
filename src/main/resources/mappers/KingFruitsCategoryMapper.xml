@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.king.fruits.dao.KingFruitsCategoryMapper" >
+  <resultMap id="BaseResultMap" type="com.king.fruits.model.KingFruitsCategory" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="PICTURE" property="picture" jdbcType="VARCHAR" />
+    <result column="DESCR" property="descr" jdbcType="VARCHAR" />
+    <result column="PARENT_ID" property="parentId" jdbcType="INTEGER" />
+  </resultMap>
+  
+  <sql id="Base_Column_List" >
+    ID, NAME, PICTURE, DESCR, PARENT_ID
+  </sql>
+  
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from king_fruits_category
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+  
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from king_fruits_category
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+  
+  
+  <insert id="insert" parameterType="com.king.fruits.model.KingFruitsCategory" >
+    insert into king_fruits_category (ID, NAME, PICTURE, 
+      DESCR, PARENT_ID)
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{picture,jdbcType=VARCHAR}, 
+      #{descr,jdbcType=VARCHAR}, #{parentId,jdbcType=INTEGER})
+  </insert>
+  
+  <insert id="insertSelective" parameterType="com.king.fruits.model.KingFruitsCategory" >
+    insert into king_fruits_category
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        ID,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="picture != null" >
+        PICTURE,
+      </if>
+      <if test="descr != null" >
+        DESCR,
+      </if>
+      <if test="parentId != null" >
+        PARENT_ID,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="picture != null" >
+        #{picture,jdbcType=VARCHAR},
+      </if>
+      <if test="descr != null" >
+        #{descr,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null" >
+        #{parentId,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  
+  <update id="updateByPrimaryKeySelective" parameterType="com.king.fruits.model.KingFruitsCategory" >
+    update king_fruits_category
+    <set >
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="picture != null" >
+        PICTURE = #{picture,jdbcType=VARCHAR},
+      </if>
+      <if test="descr != null" >
+        DESCR = #{descr,jdbcType=VARCHAR},
+      </if>
+      <if test="parentId != null" >
+        PARENT_ID = #{parentId,jdbcType=INTEGER},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  
+  <update id="updateByPrimaryKey" parameterType="com.king.fruits.model.KingFruitsCategory" >
+    update king_fruits_category
+    set NAME = #{name,jdbcType=VARCHAR},
+      PICTURE = #{picture,jdbcType=VARCHAR},
+      DESCR = #{descr,jdbcType=VARCHAR},
+      PARENT_ID = #{parentId,jdbcType=INTEGER}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+  
+  
+<!-- ==================================业务处理============================== -->
+  <select id="queryCategorys" resultMap="BaseResultMap">
+  select 
+  	A.ID, 
+  	A.NAME, 
+  	A.PICTURE,
+  	A.DESCR, 
+  	A.PARENT_ID
+  from king_fruits_category A LEFT JOIN king_fruits_category B on A.PARENT_ID=B.ID
+  </select>
+
+
+
+
+
+</mapper>

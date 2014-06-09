@@ -1,0 +1,38 @@
+19:51:08.444 [main] DEBUG o.m.s.m.MapperScannerConfigurer$Scanner - Identified candidate component class: file [E:\Administrator\workspace_rongguan1\fruits-web\target\classes\com\king\fruits\dao\KingColumnFruitsMapper.class]
+19:51:08.462 [main] DEBUG o.m.s.m.MapperScannerConfigurer$Scanner - Identified candidate component class: file [E:\Administrator\workspace_rongguan1\fruits-web\target\classes\com\king\fruits\dao\KingColumnMapper.class]
+19:51:08.463 [main] DEBUG o.m.s.m.MapperScannerConfigurer$Scanner - Identified candidate component class: file [E:\Administrator\workspace_rongguan1\fruits-web\target\classes\com\king\fruits\dao\KingFruitsCategoryMapper.class]
+19:51:08.463 [main] DEBUG o.m.s.m.MapperScannerConfigurer$Scanner - Identified candidate component class: file [E:\Administrator\workspace_rongguan1\fruits-web\target\classes\com\king\fruits\dao\KingFruitsMapper.class]
+19:51:08.463 [main] DEBUG o.m.s.m.MapperScannerConfigurer$Scanner - Identified candidate component class: file [E:\Administrator\workspace_rongguan1\fruits-web\target\classes\com\king\fruits\dao\KingPromotionMapper.class]
+19:51:08.464 [main] DEBUG o.m.s.m.MapperScannerConfigurer$Scanner - Creating MapperFactoryBean with name 'kingColumnFruitsMapper' and 'com.king.fruits.dao.KingColumnFruitsMapper' mapperInterface
+19:51:08.480 [main] DEBUG o.m.s.m.MapperScannerConfigurer$Scanner - Creating MapperFactoryBean with name 'kingColumnMapper' and 'com.king.fruits.dao.KingColumnMapper' mapperInterface
+19:51:08.480 [main] DEBUG o.m.s.m.MapperScannerConfigurer$Scanner - Creating MapperFactoryBean with name 'kingFruitsCategoryMapper' and 'com.king.fruits.dao.KingFruitsCategoryMapper' mapperInterface
+19:51:08.480 [main] DEBUG o.m.s.m.MapperScannerConfigurer$Scanner - Creating MapperFactoryBean with name 'kingFruitsMapper' and 'com.king.fruits.dao.KingFruitsMapper' mapperInterface
+19:51:08.480 [main] DEBUG o.m.s.m.MapperScannerConfigurer$Scanner - Creating MapperFactoryBean with name 'kingPromotionMapper' and 'com.king.fruits.dao.KingPromotionMapper' mapperInterface
+19:51:08.804 [main] DEBUG org.apache.ibatis.logging.LogFactory - Logging initialized using 'class org.apache.ibatis.logging.slf4j.Slf4jImpl' adapter.
+19:51:09.647 [main] DEBUG o.m.spring.SqlSessionFactoryBean - Property 'configLocation' not specified, using default MyBatis Configuration
+19:51:10.835 [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\Administrator\workspace_rongguan1\fruits-web\target\classes\mappers\KingColumnFruitsMapper.xml]'
+19:51:10.924 [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\Administrator\workspace_rongguan1\fruits-web\target\classes\mappers\KingColumnMapper.xml]'
+19:51:10.971 [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\Administrator\workspace_rongguan1\fruits-web\target\classes\mappers\KingFruitsCategoryMapper.xml]'
+19:51:11.075 [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\Administrator\workspace_rongguan1\fruits-web\target\classes\mappers\KingFruitsMapper.xml]'
+19:51:11.125 [main] DEBUG o.m.spring.SqlSessionFactoryBean - Parsed mapper file: 'file [E:\Administrator\workspace_rongguan1\fruits-web\target\classes\mappers\KingPromotionMapper.xml]'
+19:51:58.154 [17480884@qtp-3098834-5] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+19:51:58.154 [17199263@qtp-3098834-3] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+19:51:58.154 [23545827@qtp-3098834-2] DEBUG org.mybatis.spring.SqlSessionUtils - Creating a new SqlSession
+19:51:58.175 [23545827@qtp-3098834-2] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1812ab7] was not registered for synchronization because synchronization is not active
+19:51:58.175 [17480884@qtp-3098834-5] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1812ab7] was not registered for synchronization because synchronization is not active
+19:51:58.175 [17199263@qtp-3098834-3] DEBUG org.mybatis.spring.SqlSessionUtils - SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@11b7a14] was not registered for synchronization because synchronization is not active
+19:51:58.503 [17199263@qtp-3098834-3] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [jdbc:mysql://127.0.0.1:3306/fruits?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull, UserName=root@localhost, MySQL-AB JDBC Driver] will not be managed by Spring
+19:51:58.505 [23545827@qtp-3098834-2] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [jdbc:mysql://127.0.0.1:3306/fruits?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull, UserName=root@localhost, MySQL-AB JDBC Driver] will not be managed by Spring
+19:51:58.506 [17480884@qtp-3098834-5] DEBUG o.m.s.t.SpringManagedTransaction - JDBC Connection [jdbc:mysql://127.0.0.1:3306/fruits?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull, UserName=root@localhost, MySQL-AB JDBC Driver] will not be managed by Spring
+19:51:58.526 [17480884@qtp-3098834-5] DEBUG c.k.f.d.K.queryCategorys - ooo Using Connection [jdbc:mysql://127.0.0.1:3306/fruits?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull, UserName=root@localhost, MySQL-AB JDBC Driver]
+19:51:58.526 [17199263@qtp-3098834-3] DEBUG c.k.f.d.K.queryColumnFruitsAll - ooo Using Connection [jdbc:mysql://127.0.0.1:3306/fruits?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull, UserName=root@localhost, MySQL-AB JDBC Driver]
+19:51:58.527 [23545827@qtp-3098834-2] DEBUG c.k.f.d.K.selectShow - ooo Using Connection [jdbc:mysql://127.0.0.1:3306/fruits?useUnicode=true&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull, UserName=root@localhost, MySQL-AB JDBC Driver]
+19:51:58.532 [23545827@qtp-3098834-2] DEBUG c.k.f.d.K.selectShow - ==>  Preparing: select ID, NAME, PICTURE, CREATE_TIME, CREATE_ID, SHOW_STATUES, SHOW_USER_ID, SHOW_TIME from king_promotion where SHOW_STATUES=1 
+19:51:58.532 [17480884@qtp-3098834-5] DEBUG c.k.f.d.K.queryCategorys - ==>  Preparing: select A.ID, A.NAME, A.PICTURE, A.DESCR, A.PARENT_ID from king_fruits_category A LEFT JOIN king_fruits_category B on A.PARENT_ID=B.ID 
+19:51:58.532 [17199263@qtp-3098834-3] DEBUG c.k.f.d.K.queryColumnFruitsAll - ==>  Preparing: SELECT A.ID columnId, A.NAME columName, C.ID fruitsId, C.NAME fruitsName, C.PRICE price, C.ORIGINAL_PRICE original_price, C.COUNT count, C.UNIT unit, C.PICTURE picture, C.REMARKS remarks FROM king_column A LEFT JOIN king_column_fruits B ON A.id=B.COLUMN_ID LEFT JOIN king_fruits C ON B.FRUITS_ID=C.ID WHERE C.ONLINE_OPER_STATUE=0 
+19:51:58.598 [17480884@qtp-3098834-5] DEBUG c.k.f.d.K.queryCategorys - ==> Parameters: 
+19:51:58.598 [17199263@qtp-3098834-3] DEBUG c.k.f.d.K.queryColumnFruitsAll - ==> Parameters: 
+19:51:58.598 [23545827@qtp-3098834-2] DEBUG c.k.f.d.K.selectShow - ==> Parameters: 
+19:51:59.171 [23545827@qtp-3098834-2] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1812ab7]
+19:51:59.470 [17480884@qtp-3098834-5] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@1812ab7]
+19:51:59.475 [17199263@qtp-3098834-3] DEBUG org.mybatis.spring.SqlSessionUtils - Closing non transactional SqlSession [org.apache.ibatis.session.defaults.DefaultSqlSession@11b7a14]
