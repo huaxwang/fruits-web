@@ -25,7 +25,6 @@ public class FastjsonFilter implements PropertyFilter {
 		return excludes;
 	}
 	
-	@Override
 	public boolean apply(Object source, String name, Object value) {
 		if (excludes.contains(name)) {
 			return false;

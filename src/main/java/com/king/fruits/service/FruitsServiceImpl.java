@@ -35,22 +35,18 @@ public class FruitsServiceImpl extends ParentServiceImpl<KingFruits> implements 
 		return kingFruitsMapper;
 	}
 
-	@Override
 	public List<KingFruitsCategory> queryCategorys() {
 		return kingFruitsCategoryMapper.queryCategorys();
 	}
 
-	@Override
 	public List<KingPromotion> selectShow() {
 		return kingPromotionMapper.selectShow();
 	}
 
-	@Override
 	public List<KingFruitsBean> queryColumnFruitsAll() {
 		return kingFruitsMapper.queryColumnFruitsAll();
 	}
 
-	@Override
 	public Pagination<KingFruitsBean> queryFruitsAll(String name, Integer columnId,
 			Integer onlineOperStatue, Pagination<KingFruitsBean> pagination) {
 		//查询总数
@@ -65,6 +61,10 @@ public class FruitsServiceImpl extends ParentServiceImpl<KingFruits> implements 
         }
         pagination.setList(list);
 		return pagination;
+	}
+	
+	public KingFruits getKingFruitsByPid(Integer pid) {
+		return  kingFruitsMapper.selectByPrimaryKey(pid);
 	}
 	
 }

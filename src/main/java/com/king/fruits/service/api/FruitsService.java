@@ -57,4 +57,15 @@ public interface FruitsService extends ParentService<KingFruits>{
 	 * @return
 	 */
     Pagination<KingFruitsBean> queryFruitsAll(String name,Integer columnId,Integer onlineOperStatue,Pagination<KingFruitsBean> pagination);
+    
+    /**
+	 * 
+	 * 描述：〈查询全部水果〉 <br/>
+	 * 作者：why <br/>
+	 * 生成日期：2014-6-8 <br/>
+	 * 
+	 * @return
+	 */
+    
+    public KingFruits getKingFruitsByPid(Integer pid);
 }
