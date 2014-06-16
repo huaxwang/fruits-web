@@ -41,4 +41,7 @@ public interface KingFruitsMapper extends DBInterface<KingFruits>{
 	 */
     List<KingFruitsBean> queryFruitsAll(@Param("name")String name,@Param("columnId")Integer columnId,@Param("onlineOperStatue")Integer onlineOperStatue,
     		@Param("limitFrom") int limitFrom, @Param("pageSize") int pageSize);
+    
+    KingFruits selectByPrimaryKey(Integer pid);
+    
 }
